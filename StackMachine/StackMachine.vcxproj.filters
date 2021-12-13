@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Exceptions">
+      <UniqueIdentifier>{0a72ad2e-b4b9-491b-bf97-31c26a3a0327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{4d173e43-c74b-4f92-99bc-0648db0c1ad1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StackMachine">
+      <UniqueIdentifier>{846e8d7b-e73a-4ec7-abc2-91b7b4d53c0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack">
+      <UniqueIdentifier>{bf9e5f4d-0cd7-4b3d-9f99-70293ea46916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StackElement">
+      <UniqueIdentifier>{72a431da-be1c-4d1f-8b61-0ecc3c9a894c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StackMachineFileHandler">
+      <UniqueIdentifier>{ea2deb9f-22e4-40ec-9548-0430d07b5e43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logger">
+      <UniqueIdentifier>{b30110f3-86ec-4fdb-b4dd-a89062bc4a38}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomExceptions.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="DivisionByZeroException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternalFunctionNotFoundException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="FileNotFoundException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionNotFoundException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="LabelNotFoundException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="NotAllCodePathsReturnAValueException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="NotEnoughStackElementsException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="StackIsEmptyException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="IObserver.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ISubject.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="StackMachine.h">
+      <Filter>StackMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="StackElement.h">
+      <Filter>StackElement</Filter>
+    </ClInclude>
+    <ClInclude Include="StackMachineFileHandler.h">
+      <Filter>StackMachineFileHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Logger</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StackMachine.cpp">
+      <Filter>StackMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="StackElement.cpp">
+      <Filter>StackElement</Filter>
+    </ClCompile>
+    <ClCompile Include="StackMachineFileHandler.cpp">
+      <Filter>StackMachineFileHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Logger</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
