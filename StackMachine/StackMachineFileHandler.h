@@ -21,6 +21,7 @@ namespace StackMachineImplementation
 	private:
 		std::map<std::string, std::vector<std::string>>* _functions;
 		std::map<std::string, std::function<void(Stack*)>>* _externalFunctions;
+		std::map<std::string, int>* _variables;
 
 		void ParseFunction(std::string functionName);
 		void FindLabel(std::vector<std::string>& commands, std::string label, int& index);
@@ -30,5 +31,6 @@ namespace StackMachineImplementation
 		void ReadFunction(std::ifstream& fileStream, std::string& current);
 		void SkipComment(std::ifstream& fileStream, std::string& current);
 		void ReadUntilToken(std::string token, std::ifstream& fileStream, std::string current, std::vector<std::string>& commands);
+		void CheckVariableName(std::string& variableName);
 	};
 }

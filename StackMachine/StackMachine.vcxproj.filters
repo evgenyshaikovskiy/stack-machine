@@ -93,6 +93,9 @@
     <ClInclude Include="Logger.h">
       <Filter>Logger</Filter>
     </ClInclude>
+    <ClInclude Include="InvalidVariableNameException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

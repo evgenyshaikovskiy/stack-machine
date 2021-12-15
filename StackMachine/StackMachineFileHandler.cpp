@@ -3,6 +3,7 @@
 #include "CustomExceptions.h"
 #include <iostream>
 #include <map>
+#include <string>
 
 namespace StackMachineImplementation
 {
@@ -10,6 +11,8 @@ namespace StackMachineImplementation
 	{
 		_functions = new std::map<std::string, std::vector<std::string>>;
 		_externalFunctions = new std::map<std::string, std::function<void(Stack*)>>;
+		_variables = new std::map<std::string, int>;
+
 		this->HandleFile(filePath);
 	}
 
@@ -46,11 +49,34 @@ namespace StackMachineImplementation
 		{
 			if (commands[i] == "push")
 			{
-				this->Push(std::stoi(commands[++i]));
+				std::string name = commands[++i];
+
+				CheckVariableName(name);
+
+				int value;
+				// pushing variable
+				if (_variables->find(name) != _variables->end())
+				{
+					// value exists, ok.
+					value = _variables->find(name)->second;
+				}
+				else 
+				{
+					// try to parse
+					value = std::stoi(name);
+				}
+
+				this->Push(value);
 			}
 			else if (commands[i] == "pop")
 			{
-				this->Pop();
+				std::string name = commands[++i];
+
+				CheckVariableName(name);
+
+				int value = this->Pop();
+
+				_variables->insert(std::make_pair(name, value));
 			}
 			else if (commands[i] == "dup")
 			{
@@ -58,7 +84,13 @@ namespace StackMachineImplementation
 			}
 			else if (commands[i] == "peek")
 			{
-				this->Peek();
+				std::string name = commands[++i];
+
+				CheckVariableName(name);
+
+				int value = this->Peek();
+
+				_variables->insert(std::make_pair(name, value));
 			}
 			else if (commands[i] == "add")
 			{
@@ -227,6 +259,17 @@ namespace StackMachineImplementation
 			this->SkipComment(fileStream, current);
 			commands.push_back(current);
 			fileStream >> current;
+		}
+	}
+
+	void StackMachineFileHandler::CheckVariableName(std::string& variableName)
+	{
+		// check whether name is valid
+		if (_externalFunctions->find(variableName) != _externalFunctions->end()
+			|| _functions->find(variableName) != _functions->end())
+		{
+			this->Notify("Exception: invalid variable name.");
+			throw InvalidVariableNameException(variableName);
 		}
 	}
 }

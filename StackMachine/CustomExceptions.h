@@ -8,3 +8,4 @@
 #include "NotAllCodePathsReturnAValueException.h"
 #include "NotEnoughStackElementsException.h"
 #include "StackIsEmptyException.h"
+#include "InvalidVariableNameException.h"

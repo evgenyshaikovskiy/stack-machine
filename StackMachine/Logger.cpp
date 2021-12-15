@@ -10,5 +10,5 @@ Logger::Logger(ISubject* subject)
 
 void Logger::Update(const std::string& message)
 {
-	std::cout << "LOG: " << message;
+	std::cout << "console log: " << message;
 }
