@@ -20,6 +20,7 @@ namespace StackMachineImplementation
 	{
 		delete _functions;
 		delete _externalFunctions;
+		delete _variables;
 	}
 
 	void StackMachineFileHandler::StartParsing()
@@ -51,18 +52,15 @@ namespace StackMachineImplementation
 			{
 				std::string name = commands[++i];
 
-				CheckVariableName(name);
-
 				int value;
-				// pushing variable
-				if (_variables->find(name) != _variables->end())
+				
+				if (IsVariableExists(name))
 				{
-					// value exists, ok.
+					// go for next command
 					value = _variables->find(name)->second;
 				}
-				else 
+				else
 				{
-					// try to parse
 					value = std::stoi(name);
 				}
 
@@ -70,13 +68,22 @@ namespace StackMachineImplementation
 			}
 			else if (commands[i] == "pop")
 			{
-				std::string name = commands[++i];
-
-				CheckVariableName(name);
+				std::string name = commands[i + 1];
 
 				int value = this->Pop();
-
-				_variables->insert(std::make_pair(name, value));
+				// no variable 
+				if (IsValidVariableName(name))
+				{
+					i++;
+					if (!IsValidVariableName(name))
+					{
+						_variables->insert(std::make_pair(name, value));
+					}
+					else
+					{
+						_variables->find(name)->second = value;
+					}
+				}
 			}
 			else if (commands[i] == "dup")
 			{
@@ -84,13 +91,22 @@ namespace StackMachineImplementation
 			}
 			else if (commands[i] == "peek")
 			{
-				std::string name = commands[++i];
-
-				CheckVariableName(name);
+				std::string name = commands[i + 1];
 
 				int value = this->Peek();
-
-				_variables->insert(std::make_pair(name, value));
+				// no variable 
+				if (IsValidVariableName(name))
+				{
+					i++;
+					if (!IsValidVariableName(name))
+					{
+						_variables->insert(std::make_pair(name, value));
+					}
+					else
+					{
+						_variables->find(name)->second = value;
+					}
+				}
 			}
 			else if (commands[i] == "add")
 			{
@@ -262,15 +278,68 @@ namespace StackMachineImplementation
 		}
 	}
 
-	void StackMachineFileHandler::CheckVariableName(std::string& variableName)
+	bool StackMachineFileHandler::IsValidVariableName(std::string& variableName)
 	{
 		// check whether name is valid
 		if (_externalFunctions->find(variableName) != _externalFunctions->end()
 			|| _functions->find(variableName) != _functions->end())
 		{
-			this->Notify("Exception: invalid variable name.");
+			this->Notify("Exception: Invalid variable name.\n");
 			throw InvalidVariableNameException(variableName);
 		}
+
+		if (Contains(variableName, "0123456789")
+			|| EqualsOrdinal(variableName, "push")
+			|| EqualsOrdinal(variableName, "pop")
+			|| EqualsOrdinal(variableName, "peek")
+			|| EqualsOrdinal(variableName, "sub")
+			|| EqualsOrdinal(variableName, "callext")
+			|| EqualsOrdinal(variableName, "return")
+			|| EqualsOrdinal(variableName, "dup")
+			|| EqualsOrdinal(variableName, "add")
+			|| EqualsOrdinal(variableName, "mul")
+			|| EqualsOrdinal(variableName, "div")
+			|| EqualsOrdinal(variableName, "call")
+			|| EqualsOrdinal(variableName, "ifgr")
+			|| EqualsOrdinal(variableName, "goto")
+			|| EqualsOrdinal(variableName, "ifeq")
+			)
+		{
+			return false;
+		}
+
+
+
+
+		return true;
+	}
+
+	bool StackMachineFileHandler::IsVariableExists(std::string& variableName)
+	{
+		return _variables->find(variableName) != _variables->end();
+	}
+
+	bool StackMachineFileHandler::Contains(std::string& source, std::string token)
+	{
+		for (int i = 0; i < token.size(); i++)
+		{
+			if (find(source.begin(), source.end(), token[i]) != source.end())
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	bool StackMachineFileHandler::EqualsOrdinal(const std::string& left, const std::string& right)
+	{
+		return std::equal(left.begin(), left.end(),
+			right.begin(), right.end(),
+			[](char l, char r)
+			{
+				return tolower(l) == tolower(r);
+			});
 	}
 }
 

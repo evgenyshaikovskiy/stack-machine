@@ -31,6 +31,9 @@ namespace StackMachineImplementation
 		void ReadFunction(std::ifstream& fileStream, std::string& current);
 		void SkipComment(std::ifstream& fileStream, std::string& current);
 		void ReadUntilToken(std::string token, std::ifstream& fileStream, std::string current, std::vector<std::string>& commands);
-		void CheckVariableName(std::string& variableName);
+		bool IsValidVariableName(std::string& variableName);
+		bool IsVariableExists(std::string& variableName);
+		static bool Contains(std::string& source, std::string token);
+		static bool EqualsOrdinal(const std::string& left, const std::string& right);
 	};
 }

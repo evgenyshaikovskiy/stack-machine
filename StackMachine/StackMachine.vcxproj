@@ -157,7 +157,6 @@
     <ClInclude Include="FileNotFoundException.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="FunctionNotFoundException.h" />
-    <ClInclude Include="Header.h" />
     <ClInclude Include="InvalidVariableNameException.h" />
     <ClInclude Include="IObserver.h" />
     <ClInclude Include="ISubject.h" />

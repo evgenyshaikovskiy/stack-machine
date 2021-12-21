@@ -13,10 +13,7 @@ namespace StackMachineImplementation
 
 	Stack::~Stack()
 	{
-		while (_top != nullptr)
-		{
-			this->Pop();
-		}
+		_top = nullptr;
 
 		this->Unsubscribe();
 	}
