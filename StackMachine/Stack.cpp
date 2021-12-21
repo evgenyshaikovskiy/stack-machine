@@ -14,7 +14,6 @@ namespace StackMachineImplementation
 	Stack::~Stack()
 	{
 		_top = nullptr;
-
 		this->Unsubscribe();
 	}
 
