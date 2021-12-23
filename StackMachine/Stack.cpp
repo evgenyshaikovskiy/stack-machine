@@ -13,7 +13,12 @@ namespace StackMachineImplementation
 
 	Stack::~Stack()
 	{
-		_top = nullptr;
+		this->Notify("console log: print stack elements by the end of program.\n");
+		while (_top != nullptr)
+		{
+			this->Pop();
+		}
+
 		this->Unsubscribe();
 	}
 

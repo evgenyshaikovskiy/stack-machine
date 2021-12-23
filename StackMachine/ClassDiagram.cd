@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StackMachineImplementation::Stack">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <InheritanceLine Type="ISubject" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="2.18" />
+        <Point X="5.25" Y="2.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAGAAAACAAAAAQAgACCIAJAQACAAAAACAA=</HashCode>
+      <FileName>Stack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISubject">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACEABAQAAAAAAAAAA=</HashCode>
+      <FileName>ISubject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IObserver">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IObserver.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StackMachineImplementation::StackElement">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAAAAAAIAAAAAAAAAACAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>StackElement.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StackMachineImplementation::StackMachine">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIAAAAAAQAAAAAAAAABAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>StackMachine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logger">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StackMachineImplementation::StackMachineFileHandler">
+    <Position X="1.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgEAAAEAAQAIAgAAAAOAEAAAQAAAAAAIAIgASIAA=</HashCode>
+      <FileName>StackMachineFileHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

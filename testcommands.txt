@@ -1,0 +1,39 @@
+function main
+{
+	push 3
+	push 6
+	mul
+	pop toFind
+	push toFind
+	call factorial
+	return
+}
+
+function factorial
+{
+	dup
+
+	push 0
+
+	ifeq zero_factorial
+
+	dup
+
+	push 1
+
+	sub
+
+	call factorial
+
+	mul
+
+	return
+
+	zero_factorial:
+
+	pop
+
+	push 1
+
+	return
+}

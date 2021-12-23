@@ -11,7 +11,7 @@ using namespace StackMachineImplementation;
 
 void Print(Stack* stack)
 {
-    std::cout << stack->Pop() << std::endl;
+    std::cout << "Stack top: " << stack->Pop() << std::endl;
 }
 
 int main(int argc, char* argv[])

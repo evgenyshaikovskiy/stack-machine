@@ -31,11 +31,6 @@ namespace StackMachineImplementation
 		/// </summary>
 		void StartParsing();
 
-		/// <summary>
-		/// Adds the external function.
-		/// </summary>
-		/// <param name="functionName">Name of the function.</param>
-		/// <param name="function">The function.</param>
 		void AddExternalFunction(std::string functionName, std::function<void(Stack*)> function);
 
 	private:

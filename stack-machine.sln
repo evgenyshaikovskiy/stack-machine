@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StackMachineConsoleApplicat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StackMachine", "StackMachine\StackMachine.vcxproj", "{909FB4A1-339C-449B-8CA3-44CEA7AFBE22}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StackMachine.Tests", "StackMachine.Tests\StackMachine.Tests.vcxproj", "{AD469C6F-8072-4F2D-A211-609141E15DFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{909FB4A1-339C-449B-8CA3-44CEA7AFBE22}.Release|x64.Build.0 = Release|x64
 		{909FB4A1-339C-449B-8CA3-44CEA7AFBE22}.Release|x86.ActiveCfg = Release|Win32
 		{909FB4A1-339C-449B-8CA3-44CEA7AFBE22}.Release|x86.Build.0 = Release|Win32
+		{AD469C6F-8072-4F2D-A211-609141E15DFB}.Debug|x64.ActiveCfg = Debug|x64
+		{AD469C6F-8072-4F2D-A211-609141E15DFB}.Debug|x64.Build.0 = Debug|x64
+		{AD469C6F-8072-4F2D-A211-609141E15DFB}.Debug|x86.ActiveCfg = Debug|Win32
+		{AD469C6F-8072-4F2D-A211-609141E15DFB}.Debug|x86.Build.0 = Debug|Win32
+		{AD469C6F-8072-4F2D-A211-609141E15DFB}.Release|x64.ActiveCfg = Release|x64
+		{AD469C6F-8072-4F2D-A211-609141E15DFB}.Release|x64.Build.0 = Release|x64
+		{AD469C6F-8072-4F2D-A211-609141E15DFB}.Release|x86.ActiveCfg = Release|Win32
+		{AD469C6F-8072-4F2D-A211-609141E15DFB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
